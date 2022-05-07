@@ -63,7 +63,7 @@ namespace Machina
                         new PCapCaptureSocket(Config.RPCap) :
                         (ICaptureSocket)new RawCaptureSocket();
 
-                    connection.Socket.StartCapture(connection.LocalIP, Config.UseRemoteIpFilter ? connection.RemoteIP : 0);
+                    connection.Socket.StartCapture(connection.LocalIP, Config.UseRemoteIpFilter ? connection.RemoteIP : 0, Config.PCAPFilterOverride);
                 }
             }
         }

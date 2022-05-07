@@ -36,7 +36,7 @@ namespace Machina.Sockets
 
         private static readonly bool _isWindows = IsWindows();
 
-        public void StartCapture(uint localAddress, uint remoteAddress = 0)
+        public void StartCapture(uint localAddress, uint remoteAddress = 0, string filterOverride = "")
         {
             lock (_lockObject)
             {

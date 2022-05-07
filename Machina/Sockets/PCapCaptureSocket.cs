@@ -99,7 +99,7 @@ namespace Machina.Sockets
             return device;
         }
 
-        public void StartCapture(uint localAddress, uint remoteAddress = 0)
+        public void StartCapture(uint localAddress, uint remoteAddress = 0, string filterOverride = "")
         {
             StopCapture();
 
@@ -110,6 +110,7 @@ namespace Machina.Sockets
             string filterText = "ip and tcp";
             if (remoteAddress > 0)
                 filterText += " and host " + new IPAddress(remoteAddress).ToString();
+            if (filterOverride.Length != 0) filterText = filterOverride;
 
             bpf_program filter = new bpf_program();
 

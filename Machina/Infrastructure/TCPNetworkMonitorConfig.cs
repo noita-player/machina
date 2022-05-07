@@ -62,6 +62,12 @@ namespace Machina.Infrastructure
         public bool UseRemoteIpFilter
         { get; set; } = true;
 
+        /// <summary>
+        /// Specifies a filter string for npcap to override all of the above settings, for library consumers that may want to implement a custom static filter.
+        /// </summary>
+        public string PCAPFilterOverride
+        { get; set; } = "";
+
         public class RPCapConf
         {
             /// <summary>

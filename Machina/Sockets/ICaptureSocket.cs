@@ -31,7 +31,7 @@ namespace Machina.Sockets
         /// </summary>
         /// <param name="localAddress">local IP address of the interface initiating the packets of interest</param>
         /// <param name="remoteAddress">remote IP address of the host, or 0 to capture all packets on the local interface.</param>
-        void StartCapture(uint localAddress, uint remoteAddress = 0);
+        void StartCapture(uint localAddress, uint remoteAddress = 0, string filterOverride = "");
 
         /// <summary>
         /// Stops raw socket capture and cleans up any resources.
